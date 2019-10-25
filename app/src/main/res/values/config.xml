@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">lastfm by GENC</string>
+    <string name="api_key">7f4992c4b205214d9467ff8b9c77db45</string>
+    <string name="search_api_base_url">http://ws.audioscrobbler.com</string>
+    <string name="search_api_version">2.0</string>
+
+</resources>

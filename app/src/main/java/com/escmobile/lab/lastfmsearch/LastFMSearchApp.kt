@@ -27,7 +27,7 @@ class LastFMSearchApp : Application(), HasActivityInjector {
         createAppComponent()
     }
 
-    fun createAppComponent() {
+    private fun createAppComponent() {
         appComponent = DaggerAppComponent
             .builder()
             .utilsModule(UtilsModule(this, this))
