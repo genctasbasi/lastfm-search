@@ -14,7 +14,6 @@ import dagger.Provides
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.converter.scalars.ScalarsConverterFactory
 import javax.inject.Singleton
 
 const val PREF_FILE = "lastfmsearch.prefs"
@@ -62,20 +61,6 @@ class UtilsModule(
             .build()
 
         return retrofit.create(SearchApiService::class.java)
-    }
-
-    @Singleton
-    @Provides
-    fun provideOkHttpClient(): OkHttpClient {
-        val httpBuilder = OkHttpClient.Builder()
-            .addInterceptor { chain ->
-                val original = chain.request()
-                val builder = original.newBuilder().method(original.method(), original.body())
-                builder.header("Content-Type", "application/x-www-form-urlencoded")
-                chain.proceed(builder.build())
-            }
-
-        return httpBuilder.build()
     }
 
     @Singleton

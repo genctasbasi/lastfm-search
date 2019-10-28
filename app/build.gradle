@@ -36,7 +36,14 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
+
+    // Espresso
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'com.jakewharton.espresso:okhttp3-idling-resource:1.0.0'
+    implementation 'androidx.test.espresso:espresso-idling-resource:3.2.0'
+    androidTestImplementation 'androidx.test:core:1.0.0'
 
     // Android framework
     implementation "androidx.appcompat:appcompat:1.1.0"
@@ -63,6 +70,8 @@ dependencies {
     androidTestImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0"
     androidTestImplementation "org.mockito:mockito-core:2.27.0"
     androidTestImplementation "org.mockito:mockito-android:2.27.0"
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation 'android.arch.core:core-testing:1.1.1'
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:2.6.2"
@@ -81,4 +90,7 @@ dependencies {
 
     // Logging
     implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    // Kotlin
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.2.2"
 }

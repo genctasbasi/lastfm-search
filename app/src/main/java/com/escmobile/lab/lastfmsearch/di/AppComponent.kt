@@ -2,6 +2,7 @@ package com.escmobile.lab.lastfmsearch.di
 
 import com.escmobile.lab.lastfmsearch.LastFMSearchApp
 import com.escmobile.lab.lastfmsearch.di.modules.AppModule
+import com.escmobile.lab.lastfmsearch.di.modules.NetworkModule
 import com.escmobile.lab.lastfmsearch.di.modules.UtilsModule
 import com.escmobile.lab.lastfmsearch.di.modules.ViewModelModule
 import dagger.Component
@@ -15,6 +16,7 @@ import javax.inject.Singleton
     modules = [
         AndroidSupportInjectionModule::class,
         AndroidInjectionModule::class,
+        NetworkModule::class,
         AppModule::class,
         UtilsModule::class,
         ViewModelModule::class

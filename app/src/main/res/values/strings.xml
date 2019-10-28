@@ -1,5 +1,5 @@
 <resources>
-    <string name="no_results">No result found</string>
+    <string name="no_results">Hm no results found.\nTry Michael Jackson maybe?</string>
     <string name="query_hint">Search tracks, artists, albums</string>
     <string name="search_result_image">Search result image</string>
     <string name="title_albums">Albums</string>

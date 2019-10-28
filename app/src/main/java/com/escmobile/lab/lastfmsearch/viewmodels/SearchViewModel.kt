@@ -10,9 +10,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class SearchViewModel @Inject constructor(private val searchManager: SearchManager) : ViewModel() {
+class SearchViewModel @Inject constructor(val searchManager: SearchManager) : ViewModel() {
 
-    val artistSearchResultLive: SingleLiveEvent<List<CommonSearchResult>> by lazy {
+    val searchResultsLive: SingleLiveEvent<List<CommonSearchResult>> by lazy {
         SingleLiveEvent<List<CommonSearchResult>>()
     }
 
@@ -34,7 +34,7 @@ class SearchViewModel @Inject constructor(private val searchManager: SearchManag
             artistSearchResult?.toCommonSearchResult()?.let { searchResultsCombined.addAll(it) }
             albumSearchResult?.toCommonSearchResult()?.let { searchResultsCombined.addAll(it) }
 
-            artistSearchResultLive.postValue(searchResultsCombined)
+            searchResultsLive.postValue(searchResultsCombined)
         }
     }
 }

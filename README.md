@@ -1,5 +1,5 @@
 # lastfm Search Client
-# by Genc Tasbasi
+### by Genc Tasbasi
 
 ## Technologies and libraries used:
  - Proper MVVM architecture with Android Jetpack components
@@ -13,3 +13,6 @@
  - Single activity app as suggested by Google
  - NavigationComponent
  - Timber for logging
+ 
+ ![Search screen](http://escmobile.com/projects/resources/host/lastfm_search.png)
+ ![Details screen](http://escmobile.com/projects/resources/host/lastfm_details.png)

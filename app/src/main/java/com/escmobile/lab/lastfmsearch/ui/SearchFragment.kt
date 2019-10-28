@@ -59,11 +59,24 @@ class SearchFragment : Fragment(), ListClickListener<View, ListItem> {
 
     private fun observeSearchResults() {
 
-        viewModel.artistSearchResultLive.observe(viewLifecycleOwner,
+        viewModel.searchResultsLive.observe(viewLifecycleOwner,
             Observer {
-                progress_bar.visibility = View.GONE
-                displayResults(it)
+
+                hideViews()
+                if (it.isEmpty()) {
+                    no_results_found.visibility = View.VISIBLE
+                } else {
+                    recycler_view.visibility = View.VISIBLE
+                    displayResults(it)
+                }
             })
+    }
+
+    private fun hideViews() {
+        progress_bar.visibility = View.GONE
+        recycler_view.visibility = View.GONE
+        no_results_found.visibility = View.GONE
+        hideKeyboard()
     }
 
     private fun displayResults(it: List<CommonSearchResult>) {
@@ -95,7 +108,7 @@ class SearchFragment : Fragment(), ListClickListener<View, ListItem> {
     private val searchQueryListener = object : SearchView.OnQueryTextListener {
         override fun onQueryTextSubmit(query: String?): Boolean {
             query?.let {
-                hideKeyboard()
+                hideViews()
                 progress_bar.visibility = View.VISIBLE
                 viewModel.search(it)
             }
@@ -120,7 +133,7 @@ class SearchFragment : Fragment(), ListClickListener<View, ListItem> {
         }
     }
 
-    fun hideKeyboard() {
+    private fun hideKeyboard() {
         context?.let { context ->
             view?.let { view ->
                 val inputManager =
