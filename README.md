@@ -14,5 +14,5 @@
  - NavigationComponent
  - Timber for logging
  
- ![Search screen](http://escmobile.com/projects/resources/host/lastfm_search.png)
- ![Details screen](http://escmobile.com/projects/resources/host/lastfm_details.png)
+ ![Search screen](http://escapp.co.uk/projects/shared_resources/lastfm_search.png)
+ ![Details screen](http://escapp.co.uk/projects/shared_resources/lastfm_details.png)
