@@ -99,7 +99,7 @@ class SearchFragment : Fragment(), ListClickListener<View, ListItem> {
         listItems.add(ListItemHeader(getString(R.string.title_tracks)))
         listItems.addAll(it.filter { resultType -> resultType.resultType == SearchResultType.Track }.toListItem())
 
-        listItems.add(ListItemHeader(getString(R.string.title_artits)))
+        listItems.add(ListItemHeader(getString(R.string.title_artists)))
         listItems.addAll(it.filter { resultType -> resultType.resultType == SearchResultType.Artist }.toListItem())
 
         return listItems
